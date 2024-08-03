@@ -3,8 +3,8 @@
 #
 
 
-work_dir="/home/aiyaya50"
-
+work_dir="/home/aiyaya50/Bugs"
+main_dir="/home/aiyaya50"
 export _JAVA_OPTIONS="-Xmx6144M -XX:MaxHeapSize=4096M"
 export MAVEN_OPTS="-Xmx1024M"
 export ANT_OPTS="-Xmx6144M -XX:MaxHeapSize=4096M"
@@ -13,14 +13,14 @@ export ANT_OPTS="-Xmx6144M -XX:MaxHeapSize=4096M"
 # Get GZoltar
 #
 
-export GZOLTAR_AGENT_JAR="$work_dir/gzoltar/com.gzoltar.agent.rt/target/com.gzoltar.agent.rt-1.7.4-SNAPSHOT-all.jar"
-export GZOLTAR_CLI_JAR="$work_dir/gzoltar/com.gzoltar.cli/target/com.gzoltar.cli-1.7.4-SNAPSHOT-jar-with-dependencies.jar"
+export GZOLTAR_AGENT_JAR="$main_dir/gzoltar/com.gzoltar.agent.rt/target/com.gzoltar.agent.rt-1.7.4-SNAPSHOT-all.jar"
+export GZOLTAR_CLI_JAR="$main_dir/gzoltar/com.gzoltar.cli/target/com.gzoltar.cli-1.7.4-SNAPSHOT-jar-with-dependencies.jar"
 
 #
 # Get D4J
 #
 
-export D4J_HOME="$work_dir/defects4j"
+export D4J_HOME="/home/aiyaya50/defects4j"
 
 #
 # Checkout Closure-27, compile it, and get its metadata
@@ -42,9 +42,11 @@ src_classes_dir="$work_dir/$PID-${BID}b/$src_classes_dir"
 test_classes_dir=$($D4J_HOME/framework/bin/defects4j export -p dir.bin.tests)
 test_classes_dir="$work_dir/$PID-${BID}b/$test_classes_dir"
 echo "$PID-${BID}b's classpath: $test_classpath" >&2
+echo "classpath=$test_classpath>$work_dir/$PID-${BID}b/test_classpath.sh";
 echo "$PID-${BID}b's bin dir: $src_classes_dir" >&2
+echo "classpath=$src_classes_dir>$work_dir/$PID-${BID}b/src_classes_dir.sh";
 echo "$PID-${BID}b's test bin dir: $test_classes_dir" >&2
-
+echo "classpath=$test_classes_dir>$work_dir/$PID-${BID}b/test_class_dir.sh;"
 #
 # Collect unit tests to run GZoltar with
 #
@@ -102,6 +104,6 @@ java -cp "$src_classes_dir:$D4J_HOME/framework/projects/lib/junit-4.11.jar:$test
       --dataFile "$ser_file" \
       --outputDirectory "$work_dir/$PID-${BID}b" \
       --family "sfl" \
-      --formula "ochiai:Fo1:Fo2:Fo3:Fo4:Fo5:Fo6:Fo7:Fo8:Fo9:Fo10:Fo11:Fo12:Fo13:Fo14:Fo15:Fo16:Fo17:Fo18:Fo19:Fo20:Fo21:Fo22:DStar" \
+      --formula "ochiai:Ochiai2:Yaya:Tarantula:Barinel:Opt:Fo1:Fo2:Fo3:Fo4:Fo5:Fo6:Fo7:Fo8:Fo9:Fo10:Fo11:Fo12:Fo13:Fo14:Fo15:Fo16:Fo17:Fo18:Fo19:Fo20:Fo21:Fo22:DStar" \
       --metric "entropy" \
       --formatter "txt:html"

@@ -2,7 +2,7 @@
 import subprocess
 
 # Checkout Closure-27, compile it, and get its metadata
-trial= {'Chart':'26', 'Time':'26','Gson':'18', 'Jsoup':'93'}
+trial= {'Lang':'5', 'Math':'5','Time':'5','Chart':'5', 'Mockito':'5'}
 v1 = {'Chart':26, 'Time':26, 'Lang':64, 'Mockito':38, 'Math':106, 'JxPath':22,'Closure':174}
 v2={'Collections':4, 'Codec':18, 'Csv':16, 'Cli':39, 'Math':106, 'JxPath':22, \
           'Jsoup':93, 'JacksonXml':6,'JacksonDatabind':112, 'JacksonCore':26, 'Gson':18, 'Compress':47, 'Closure':174}
