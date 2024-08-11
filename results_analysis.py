@@ -4,7 +4,7 @@ import re
 metric=['ochiai', 'ochiai2', 'tarantula','barinel','opt','dstar', 'yaya','fo1','fo2','fo3','fo4','fo5','fo6','fo7','fo8','fo9','fo10','fo11','fo12','fo13','fo14','fo15','fo16','fo17','fo18','fo19','fo20','fo21', 'fo22']
 
 # The selected projects for the analysis
-trial= {'Lang':'5', 'Chart':'5', 'Time':'5','Math':'5', 'Mockito':'5'}
+trial= {'JacksonDatabind':'112'}
 # D4J v1 and 2
 v1 = {'Chart':26, 'Time':26, 'Lang':64, 'Mockito':38, 'Math':106, 'JxPath':22,'Closure':174}
 v2={'Collections':4, 'Codec':18, 'Csv':16, 'Cli':39, 'Math':106, 'JxPath':22, \
@@ -125,7 +125,7 @@ for p in trial:
     
     # iterate the bugs in each project
     
-    for e in range(1, BID+1):
+    for e in range(96, BID+1):
         bug_location=f'/home/aiyaya50/defects4j/framework/projects/{p}/patches/'
         bug_location+=f'/{e}.src.patch'
         buggy_line=findBuggyLine(bug_location)
