@@ -17,25 +17,26 @@
 package com.gzoltar.sfl.formulas;
 
 /**
- * Implementation of Ochiai coefficient from <i>Zoogeographic studies on the soleoid fishes found in
- * Japan and its neighbouring regions<i>.
+ * Implementation of Yaya coefficient from <i></i>
  * 
- * @author Jos� Campos
- */ 
+ * @author Rui Abreu
+ */
+public final class Meco extends AbstractSFLFormula {
 
-public final class Fo7 extends AbstractSFLFormula{
-	 @Override
- 	 public String getName() {
- 	 return "Fo7";
- 	}
- 	 @Override
- 	 public double compute(final double n00, final double n01, final double n10, final double n11) {
- 	 	 try { 
- 	 	 return Math.pow(n11,2)*(-n10*(n00 + n11) + n11*(n00 + n01 + n10 + n11))/(n00 + n01 + n10 + n11); 
- 	 	 }
- 	 	 catch(ArithmeticException e){
- 	 	 	 return 0.0; 
- 	 	 }
- 	 	 
- 	 }
+  @Override
+  public String getName() {
+    return "Meco";
+  }
+
+  @Override
+  public double compute(final double n00, final double n01, final double n10, final double n11) {
+    if ((n10 + n01 == 0) || (n11 == 0)) {
+      return 0.0;
+    }
+    double e,p,f,a=0.0;
+    e= n11+n10; a=n00+n11;f=0.0; p=a/(n00+n01+n10+n11);
+    if (n11>0)
+      f=1.0;
+    return (e*p)+(f * a);
+  }
 }

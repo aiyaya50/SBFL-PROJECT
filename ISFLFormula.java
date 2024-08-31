@@ -16,26 +16,18 @@
  */
 package com.gzoltar.sfl.formulas;
 
-/**
- * Implementation of Ochiai coefficient from <i>Zoogeographic studies on the soleoid fishes found in
- * Japan and its neighbouring regions<i>.
- * 
- * @author Jos� Campos
- */ 
+import com.gzoltar.fl.IFormula;
 
-public final class Fo7 extends AbstractSFLFormula{
-	 @Override
- 	 public String getName() {
- 	 return "Fo7";
- 	}
- 	 @Override
- 	 public double compute(final double n00, final double n01, final double n10, final double n11) {
- 	 	 try { 
- 	 	 return Math.pow(n11,2)*(-n10*(n00 + n11) + n11*(n00 + n01 + n10 + n11))/(n00 + n01 + n10 + n11); 
- 	 	 }
- 	 	 catch(ArithmeticException e){
- 	 	 	 return 0.0; 
- 	 	 }
- 	 	 
- 	 }
+public interface ISFLFormula extends IFormula {
+
+  /**
+   * Returns a suspiciousness value
+   * 
+   * @param n00 number of passing test cases that do not execute the faulty node
+   * @param n01 number of failing test cases that do not execute the faulty node
+   * @param n10 number of passing test cases that execute the faulty node
+   * @param n11 number of failing test cases that execute the faulty node
+   * @return
+   */
+  public double compute(final double n00, final double n01, final double n10, final double n11);
 }

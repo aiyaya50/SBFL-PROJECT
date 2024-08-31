@@ -26,7 +26,7 @@ package com.gzoltar.sfl.formulas;
 public final class Fo19 extends AbstractSFLFormula{
 	 @Override
  	 public String getName() {
- 	 return "FO19";
+ 	 return "Fo19";
  	}
  	 @Override
  	 public double compute(final double n00, final double n01, final double n10, final double n11) {

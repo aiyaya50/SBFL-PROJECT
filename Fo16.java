@@ -20,13 +20,13 @@ package com.gzoltar.sfl.formulas;
  * Implementation of Ochiai coefficient from <i>Zoogeographic studies on the soleoid fishes found in
  * Japan and its neighbouring regions<i>.
  * 
- * @author José Campos
+ * @author JosÃ© Campos
  */ 
 
 public final class Fo16 extends AbstractSFLFormula{
 	 @Override
  	 public String getName() {
- 	 return "FO16";
+ 	 return "Fo16";
  	}
  	 @Override
  	 public double compute(final double n00, final double n01, final double n10, final double n11) {
